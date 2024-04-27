@@ -144,7 +144,7 @@ h1 {
   background-position: center;
   border-radius: 20px;
   text-align: center;
-  padding: 100px 0;
+  padding: 50px 0;
   color: #fff;
   margin: 50px auto 5px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -175,3 +175,74 @@ h1 {
 }
 
 
+.clock{
+  margin: auto;
+  
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 250px;
+  height: 250px;
+  background: #23242e;
+  border-radius: 50%;
+  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25);
+  inset : 5px 5px 10px rgba(0,0,0,0.5);
+  inset : 5px 5px 20px rgba(0,0,0,0.2);
+  inset: -5px -5px 15px rgba(0,0,0,0.75); 
+}
+
+.clock span b{
+ position: absolute;
+ inset: 295px 320px 340px 320px;;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+ font-weight: 600; 
+ display: inline-block;
+
+}
+
+.circle{
+  position: absolute;
+  width : 150px;
+  height : 150px;
+  border-radius : 50%;
+  border : 2px solid rgba(116, 108, 108, 0.25);
+  left: 97.7vh;
+  top:38.5vh;
+}
+.hour-hand, .minute-hand, .second-hand {
+  position: absolute;
+  background-color: rgb(236, 14, 14);
+  transform-origin: bottom center;
+}
+
+.hour-hand {
+  width: 6px;
+  height: 60px;
+  top: 40.2%;
+  left: calc(50% - 3px);
+}
+
+.minute-hand {
+  width: 4px;
+  height: 80px;
+  top: 38%;
+  left: calc(50% - 2px);
+}
+
+.second-hand {
+  width: 2px;
+  height: 90px;
+  top: 36.5%;
+  left: calc(50% - 1px);
+}
+
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.stop-btn, .start-btn, .reset-btn, .lap-btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

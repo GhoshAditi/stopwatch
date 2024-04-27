@@ -17,11 +17,34 @@
             
         </div>
         <div class="stopwatch_m">
+            <div class="clock">
+                <div class="hour-hand" id="hour-hand"></div>
+                <div class="minute-hand" id="minute-hand"></div>
+                <div class="second-hand" id="second-hand"></div>
+                <div class="circle" style="--clr: #06f616"><i></i></div>
+                <div class="circle2"><i></i></div>
+                <div class="circle3"><i></i></div>
+
+                <span id="second-1" style ="--i:1;"><b>1</b></span> 
+                <span id="second-2" style ="--i:2;"><b>2</b></span> 
+                <span id="second-3" style ="--i:3;"><b>3</b></span> 
+                <span id="second-4" style ="--i:4;"><b>4</b></span> 
+                <span id="second-5" style ="--i:5;"><b>5</b></span> 
+                <span id="second-6" style ="--i:6;"><b>6</b></span> 
+                <span id="second-7" style ="--i:7;"><b>7</b></span> 
+                <span id="second-8" style ="--i:8;"><b>8</b></span> 
+                <span id="second-9" style ="--i:9;"><b>9</b></span> 
+                <span id="second-1" style ="--i:10;"><b>10</b></span> 
+                <span id="second-1" style ="--i:11;"><b>11</b></span> 
+                <span id="second-1" style ="--i:12;"><b>12</b></span> 
+            </div>
             <h2 id="displayTime">00:00:00</h2>
             <div class="buttons">
-                <img src="images/stop.jpg" alt="Stop" onclick="watchstop()">
-                <img src="images/start.png" alt="Start" onclick="watchstart()">
-                <img src="images/reset.jpg" alt="Reset" onclick="watchreset()">
+                <button class="stop-btn" onclick="watchstop()">Stop</button>
+                <button class="start-btn" onclick="watchstart()">Start</button>
+                <button class="reset-btn" onclick="watchreset()">Reset</button>
+                <button class="lap-btn" onclick="recordLap()">Lap</button> <!-- New lap button -->
+                <ul id="laps-list"></ul>
             </div>
         </div>
     </div>
