@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="loader">
+        <div class="inner"></div>
+    </div>
+
+    <div class="stopwatch">
+        <h1 id="animated-text">Keep time on your side with a <span class="highlight">Stopwatch</span>.</h1>
+        <div class="stopwatch-roll">
+            
+        </div>
+        <div class="stopwatch_m">
+            <h2 id="displayTime">00:00:00</h2>
+            <div class="buttons">
+                <img src="images/stop.jpg" alt="Stop" onclick="watchstop()">
+                <img src="images/start.png" alt="Start" onclick="watchstart()">
+                <img src="images/reset.jpg" alt="Reset" onclick="watchreset()">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
