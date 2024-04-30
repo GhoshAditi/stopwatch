@@ -1,3 +1,32 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+    const body = document.getElementById('body');
+    const loader = document.getElementById('loader');
+  
+    // Change the body's background to black when the page loads
+    body.style.background = '#00010f';
+  
+    // Hide the loader and change the body's background back to the image after a timeout
+    setTimeout(() => {
+      loader.style.display = 'none';
+      body.style.background = "url('images/background.jpg') no-repeat center center fixed";
+      body.style.backgroundSize = 'cover';
+    }, 5000); // Adjust the timeout as needed
+  });
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const body = document.getElementById('body');
+    const loader = document.getElementById('loader');
+  
+    // Add the style to the body when the page loads
+    body.style.height = '100vh';
+  
+    // Hide the loader and remove the style from the body after a timeout
+    setTimeout(() => {
+      loader.style.display = 'none';
+      body.style.height = '';
+    }, 5000); // Adjust the timeout as needed
+  });
+
 window.onload = function () {
   setTimeout(function () {
       document.querySelector('.loader').style.display = 'none';
@@ -76,4 +105,4 @@ window.onload = function () {
   document.querySelector('.stop-btn').addEventListener('click', watchstop);
   document.querySelector('.reset-btn').addEventListener('click', watchreset);
   document.querySelector('.lap-btn').addEventListener('click', recordLap);
-};
+}; 

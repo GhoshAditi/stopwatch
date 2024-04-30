@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap');
 
 body {
-  background: #00010f;
-  overflow: hidden;
+  background-image: url(images/background.jpg);
+  background-size: cover;
   font-family: 'Courier Prime', monospace;
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  background-color: #00010f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 0;
 }
 
 .loader {
+  
   animation: spin 1.5s linear alternate infinite;
   background: #B73F41;
   border-radius: 50%;
@@ -163,86 +171,159 @@ h1 {
   justify-content: center; /* Center align items horizontally */
 }
 
-.buttons img {
-  width: 80px; /* Set width */
-  height: 80px; /* Set height */
-  margin-right: 20px; /* Add some spacing between images */
-  
-}
-
-.buttons img:nth-child(2) {
-  width: 100px;
-}
-
-
-.clock{
-  margin: auto;
-  
-  top: 0; left: 0; bottom: 0; right: 0;
-  width: 250px;
-  height: 250px;
-  background: #23242e;
-  border-radius: 50%;
-  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25);
-  inset : 5px 5px 10px rgba(0,0,0,0.5);
-  inset : 5px 5px 20px rgba(0,0,0,0.2);
-  inset: -5px -5px 15px rgba(0,0,0,0.75); 
-}
-
-.clock span b{
- position: absolute;
- inset: 295px 320px 340px 320px;;
-  text-align: center;
-  transform: rotate(calc(30deg * var(--i)));
- font-weight: 600; 
- display: inline-block;
-
-}
-
-.circle{
-  position: absolute;
-  width : 150px;
-  height : 150px;
-  border-radius : 50%;
-  border : 2px solid rgba(116, 108, 108, 0.25);
-  left: 97.7vh;
-  top:38.5vh;
-}
-.hour-hand, .minute-hand, .second-hand {
-  position: absolute;
-  background-color: rgb(236, 14, 14);
-  transform-origin: bottom center;
-}
-
-.hour-hand {
-  width: 6px;
-  height: 60px;
-  top: 40.2%;
-  left: calc(50% - 3px);
-}
-
-.minute-hand {
-  width: 4px;
-  height: 80px;
-  top: 38%;
-  left: calc(50% - 2px);
-}
-
-.second-hand {
-  width: 2px;
-  height: 90px;
-  top: 36.5%;
-  left: calc(50% - 1px);
-}
-
-.buttons {
-  margin-top: 20px;
-  text-align: center;
-}
-
 .stop-btn, .start-btn, .reset-btn, .lap-btn {
   padding: 10px 20px;
   margin: 0 10px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+.number, .hour-hand, .minute-hand {
+  transform: translateZ(20px); /* make the numbers and hands pop out */
+}
+.stop-btn {
+  background-color: #b73f41; /* Radiant color */
+}
+
+.start-btn {
+  background-color: #4bb543; /* Radiant color */
+}
+
+.reset-btn {
+  background-color: #3498db; /* Radiant color */
+}
+
+.lap-btn {
+  background-color: #9b59b6; /* Radiant color */
+}
+
+/* Glow effect on hover */
+.stop-btn:hover, .start-btn:hover, .reset-btn:hover, .lap-btn:hover {
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+
+.clock {
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: relative;
+right: 0;
+width: 250px;
+height: 250px;
+background: radial-gradient(circle at center, #321701, #1c1001);
+border-radius: 50%;
+box-shadow: 
+  0 0 30px rgba(0,0,0,0.2), /* outer shadow */
+  0 0 10px rgba(0,0,0,0.2), /* inner shadow */
+  inset 0 0 30px rgba(255,255,255,0.3), /* outer glow */
+  inset 0 0 10px rgba(255,255,255,0.3), /* inner glow */
+  0 0 0 10px rgba(255,255,255,0.1), /* outer border */
+  0 0 0 15px rgba(0,0,0,0.2), /* inner border */
+  0 0 0 20px rgba(255,255,255,0.1), /* outer border */
+  0 0 0 25px rgba(0,0,0,0.2); /* inner border */
+transform: perspective(500px) rotateX(10deg) rotateY(10deg);
+}
+
+.number {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -150%) rotate(calc(var(--i) * 30deg)) translateY(-100px);
+  color: #fff;
+  font-size: 18px;
+}
+
+.number::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hour-hand, .minute-hand, .second-hand {
+  position: absolute;
+  background-color: #f80606;
+  transform-origin: bottom center;
+  
+}
+
+.hour-hand {
+  width: 6px;
+  height: 60px;
+  top: 25%;
+  left: 49%;
+  transform: translate(-50%, -100%) rotate(90deg);
+}
+
+.minute-hand {
+  width: 4px;
+  height: 80px;
+  top: 19%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.second-hand {
+  width: 2px;
+  height: 90px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(270deg);
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  
+  background: #fff;
+  border-radius: 50%;
+}
+@media screen and (max-width: 600px) {
+  .stopwatch_m {
+    width: 90%; /* Adjusted width for smaller mobile screens */
+  }
+  h1{
+    font-size: 2em;
+    margin-top: 10vh;
+  }
+
+  /* Adjust button padding for smaller screens */
+  .stop-btn, .start-btn, .reset-btn, .lap-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* Adjust clock size for smaller screens */
+  .clock {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Adjust clock number size for smaller screens */
+  .number {
+    font-size: 14px;
+    
+  }
+
+  /* Adjust clock hand sizes for smaller screens */
+  .hour-hand {
+    height: 40px;
+  }
+
+  .minute-hand {
+    height: 60px;
+  }
+
+  .second-hand {
+    height: 70px;
+  }
 }
