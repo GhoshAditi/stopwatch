@@ -91,6 +91,10 @@ window.onload = function () {
       [seconds, minutes, hours] = [0, 0, 0];
       displayTime.textContent = "00:00:00";
 
+      const tickSound = document.getElementById('tick-sound');
+  tickSound.pause();
+  tickSound.currentTime = 0; 
+  
       // Reset hands position
       document.getElementById('second-hand').style.transform = `rotate(0deg)`;
       document.getElementById('minute-hand').style.transform = `rotate(0deg)`;
