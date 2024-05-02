@@ -72,11 +72,17 @@ window.onload = function () {
       if (timer === null) {
           timer = setInterval(stopwatch, 1000);
       }
+
+      const tickSound = document.getElementById('tick-sound');
+        tickSound.play();
   }
 
   function watchstop() {
       clearInterval(timer);
       timer = null;
+      const tickSound = document.getElementById('tick-sound');
+  tickSound.pause();
+  tickSound.currentTime = 0;
   }
 
   function watchreset() {
