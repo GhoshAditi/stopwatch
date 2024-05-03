@@ -255,9 +255,15 @@ transform: perspective(500px) rotateX(10deg) rotateY(10deg);
 .hour-hand {
   width: 6px;
   height: 60px;
-  top: 25%;
+  top: 30%;
   left: 49%;
-  transform:  rotate(90deg);
+  transform:  rotate();
+}
+/* Apply this style when the display is larger than 768px */
+@media (min-width: 600px) {
+  .hour-hand {
+    top: 25%;
+  }
 }
 
 .minute-hand {
@@ -265,7 +271,7 @@ transform: perspective(500px) rotateX(10deg) rotateY(10deg);
   height: 80px;
   top: 19%;
   left: 50%;
-  transform: translate(-50%, -100%) rotate(180deg);
+  transform: translate(-50%, -100%) rotate();
 }
 
 .second-hand {
@@ -273,7 +279,7 @@ transform: perspective(500px) rotateX(10deg) rotateY(10deg);
   height: 90px;
   top: 15%;
   left: 50%;
-  transform:  rotate(270deg);
+  transform:  rotate();
 }
 
 .center-circle {
